@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="font.css">
+</head>
+<body>
+    <header class="header">
+
+    </header>
+    <main class="main">
+        <div class="game_container">
+            <div class="wrapper">
+                <div class="canvas_container">
+                    <canvas id="myCanvas" width="200" height="400"></canvas>
+                </div>
+                <div class="info">
+                    <div class="score_container">
+                        <h4 class="score_title">Score</h4>
+                        <h3 id="score_id" class="score_digit">000000</h3>
+                    </div>
+                    <div class="level_container">
+                        <h4 class="level_title">Level</h4>
+                        <h3 class="level_digit"><span>00000</span><span id="level_id">1</span></h3>
+                    </div>
+                    <div class="clean_container">
+                        <h4 class="clean_title">Clean</h4>
+                        <h3 id="clean_id" class="clean_digit"><span>00000</span>0</h3>
+                    </div>
+                    <div class="next_figure_container">
+                        <h4 class="next_figure_title">Next</h4>
+                        <div class="figure_wrapper">
+                            <div class="top_line">
+                                <div class="next" id="next_cell0">
+                                    <div class="cell_inner" id="next_cell_in0"></div>
+                                </div>
+                                <div class="next" id="next_cell1">
+                                     <div class="cell_inner" id="next_cell_in1"></div>
+                                </div>
+                                <div class="next" id="next_cell2">
+                                     <div class="cell_inner" id="next_cell_in2"></div>
+                                </div>
+                                <div class="next" id="next_cell3">
+                                     <div class="cell_inner" id="next_cell_in3"></div>
+                                </div>
+                            </div>
+                            <div class="bottom_line">
+                                <div class="next" id="next_cell4">
+                                     <div class="cell_inner" id="next_cell_in4"></div>
+                                </div>
+                                <div class="next" id="next_cell5">
+                                     <div class="cell_inner" id="next_cell_in5"></div>
+                                </div>
+                                <div class="next" id="next_cell6">
+                                     <div class="cell_inner" id="next_cell_in6"></div>
+                                </div>
+                                <div class="next" id="next_cell7">
+                                     <div class="cell_inner" id="next_cell_in7"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="state_container">
+                        <div class="game_over_container" id="game_over">
+                            GAME OVER
+                        </div>
+                        <div class="mute" id="mute_id"></div>
+                        <div class="pause" id="pause_id">PAUSE</div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <div class="button_container">
+                <div class="game_state-buttons">
+                    <div class="reset_button_container">
+                        <p class="reset_p">reset / R</p>
+                        <div id="reset_button_id"class="reset_button smallButton"> </div>
+                    </div>
+                    <div class="pause_button_container">
+                        <p class="pause_p">pause / P</p>
+                        <div id="pause_button_id" class="pause_button smallButton"> </div>
+                    </div>
+                    <div class="mute_button_container">
+                        <p class="mute_p">mute / M</p>
+                        <div id="mute_button_id" class="mute_button smallButton"> </div>
+                    </div>
+                    
+                </div>
+                <div class="top_line_buttons">
+                    <div class="arrow_container">
+                        <div class="left_button_container">
+                            <p class="left_button_p">left /<br> arrow left</p>
+                            <div id="left_button_id" class="left_button"></div>
+                        </div>
+                        <div class="right_button_container">
+                            <p class="right_button_p">right /<br> arrow right</p>
+                            <div id="right_button_id" class="right_button"></div>
+                        </div>
+                    </div>
+                    <div class="rotate_button_container">
+                        <p class="rotate_button_p">rotate /<br>arrow up</p>
+                        <div id="rotate_button_id" class="rotate_button"></div>
+                    </div>
+                    
+                </div>
+                    
+                <div class="bottom_line_buttons">
+                    <div class="down_bottom_container">
+                        <div id="down_button_id" class="down_button"></div>
+                        <p class="down_button_p">down / arrow down</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

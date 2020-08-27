@@ -1,0 +1,310 @@
+* { 
+    padding: 0; 
+    margin: 0; 
+}
+.main{
+    margin: 10px;
+    
+}
+.game_container{
+    margin: 0 auto;
+    max-width: 380px;
+    border: 2px solid #899599;
+    border-radius: 15px;
+}
+.wrapper{
+    margin: 0 auto;
+    max-width: 310px;
+    padding: 8px;
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: rgba(135, 147, 114, .3);
+}
+
+canvas { 
+    background: #fff; 
+    display: block;  
+    margin: 0 auto; 
+    border: 2px solid black;
+    
+}
+.info{
+    width: 100%;
+    padding: 8px 8px 8px 15px;
+}
+.score_container,
+.level_container,
+.clean_container{
+    margin-bottom: 60px;
+}
+
+.score_digit,
+.level_digit,
+.clean_digit,
+.figure_wrapper{
+    float: right;
+}
+
+.score_digit,
+.level_digit,
+.clean_digit,
+.game_over_container,
+.pause_container{
+    font-family: DS-DIGIG;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.score_digit span,
+.level_digit span,
+.clean_digit span{
+    color: rgba(135, 147, 114, .3);
+}
+
+.score_title,
+.level_title,
+.clean_title,
+.next_figure_title{
+    margin-bottom: 10px;
+}
+.next_figure_container{
+    margin-bottom: 70px;
+}
+.top_line,
+.bottom_line{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.next{
+    position: relative;
+    width: 16px;
+    height: 16px;
+    background: rgba(135, 147, 114, .2);
+    margin: 1px;
+}
+
+.cell_inner{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 8px;
+    width: 8px;
+    border: 2px solid white;
+    background: rgba(135, 147, 114, .2); 
+}
+#level_id{
+    color: black;
+}
+.next_cell_active{
+    background: black;
+}
+.game_over_container,
+.pause_container{
+    color: black;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.pause{
+    display: none;
+    font-family: DS-DIGIG;
+    position: absolute;
+    top: 30px;
+    left: 35px;
+
+}
+.mute{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: url("img/mute.png") no-repeat center center;
+    background-size: cover;
+    color: black;
+}
+.state_container{
+    position: relative;
+}
+.game_over_container,
+.inactive{
+    display: none;
+}
+.active{
+    display: block;
+}
+
+#pause_id {
+    -webkit-animation: blink 2s linear infinite;
+    animation: blink 2s linear infinite;
+  }
+  @-webkit-keyframes blink {
+    50% { color: rgb(34, 34, 34); }
+    51% { color: rgba(34, 34, 34, 0); }
+    100% { color: rgba(34, 34, 34, 0); }
+  }
+  @keyframes blink {
+    50% { color: rgb(34, 34, 34); }
+    51% { color: rgba(34, 34, 34, 0); }
+    100% { color: rgba(34, 34, 34, 0); }
+  }
+
+    /* buttons position */
+    .button_container{
+        margin: 0 auto;
+        max-width: 310px;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        /* background: rgba(135, 147, 114, .3); */
+    }
+    .game_state-buttons{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+  /* buttons styles*/
+  /* small buttons */
+  .smallButton {
+	box-shadow: 2px 3px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:50%;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	color:#3a8a9e;
+	font-family:Arial;
+	font-size:17px;
+	padding: 10px 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+}
+.smallButton:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+.smallButton:active {
+	position:relative;
+    top:1px;
+    box-shadow: 1px 2px 0px 0px #899599;
+}
+
+/* middle size buttons */
+.left_button,
+.right_button,
+.down_button{
+    box-shadow: 3px 4px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:50%;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	color:#3a8a9e;
+	/* font-family:Arial; */
+	/* font-size:17px; */
+	padding: 20px 20px;
+	/* text-decoration:none; */
+	/* text-shadow:0px 1px 0px #e1e2ed; */
+}
+.left_button:hover,
+.right_button:hover,
+.down_button:hover{
+    background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+.left_button:active,
+.right_button:active,
+.down_button:active{
+    position:relative;
+    top:1px;
+    box-shadow: 1px 2px 0px 0px #899599;
+}
+/* big size buttons */
+.rotate_button {
+	box-shadow: 3px 4px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:50%;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	color:#3a8a9e;
+	font-family:Arial;
+	font-size:17px;
+	padding: 28px 28px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+}
+.rotate_button:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+.rotate_button:active {
+	position:relative;
+    top:1px;
+    box-shadow: 1px 2px 0px 0px #899599;
+}
+
+.button_active{
+    position:relative;
+    top:1px;
+    box-shadow: 1px 2px 0px 0px #899599;
+}
+
+
+.reset_button_container,
+.pause_button_container,
+.mute_button_container{
+    text-align: center;
+}
+
+
+.button_container p{
+    font-family: Verdana, Geneva, sans-serif; 
+    font-size: 11px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 400; 
+    line-height: 10px; 
+    text-align: center;
+}
+
+/* top lines */
+.top_line_buttons{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+/* middle lines */
+.arrow_container{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.rotate_button_container{
+    margin: 10px 10px 0 0;
+}
+
+/* bottom line */
+.bottom_line_buttons{
+    width: 100%;
+    text-align: left;
+}
+.down_button{
+    margin-left: 47px;
+
+}
+.down_bottom_container p{
+    text-align: left;
+    margin-left: 15px;
+}
