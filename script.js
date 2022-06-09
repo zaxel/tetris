@@ -82,15 +82,27 @@ for(let r=0; r<canvasRows; r++){
 function keyDownHandler(e) {
     if(!pause){
         if(e.key === "Right" || e.key === "ArrowRight" || e.currentTarget.id === "right_button_id") {
+            leftPressed = false;
+            downPressed = false;
+            upPressed = false;
             rightPressed = true;
         }
         if(e.key === "Left" || e.key === "ArrowLeft" || e.currentTarget.id === "left_button_id") {
+            rightPressed = false;
+            downPressed = false;
+            upPressed = false;
             leftPressed = true;
         }
         if(e.key === "Down" || e.key === "ArrowDown" || e.currentTarget.id === "down_button_id") {
+            rightPressed = false;
+            leftPressed = false;
+            upPressed = false;
             downPressed = true;
         }
         if(e.key === "Up" || e.key === "ArrowUp" || e.key === " " || e.currentTarget.id === "rotate_button_id") {
+            rightPressed = false;
+            leftPressed = false;
+            downPressed = false;
             upPressed = true;
         }
     }
