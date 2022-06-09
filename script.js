@@ -69,43 +69,43 @@ for(let r=0; r<canvasRows; r++){
     document.getElementById("reset_button_id").addEventListener("click", keyDownHandler);
     document.getElementById("mute_button_id").addEventListener("click", keyDownHandler);
     document.getElementById("rotate_button_id").addEventListener("click", keyDownHandler);
-    document.getElementById("left_button_id").addEventListener("mousedown", keyDownHandler);
-    document.getElementById("left_button_id").addEventListener("mouseup", keyUpHandler);
-    document.getElementById("right_button_id").addEventListener("mousedown", keyDownHandler);
-    document.getElementById("right_button_id").addEventListener("mouseup", keyUpHandler);
-    document.getElementById("down_button_id").addEventListener("mousedown", keyDownHandler);
-    document.getElementById("down_button_id").addEventListener("mouseup", keyUpHandler);
+
+
+    document.getElementById("left_button_id").addEventListener("pointerdown", keyDownHandler);
+    document.getElementById("left_button_id").addEventListener("pointerup", keyUpHandler);
+    document.getElementById("right_button_id").addEventListener("pointerdown", keyDownHandler);
+    document.getElementById("right_button_id").addEventListener("pointerup", keyUpHandler);
+    document.getElementById("down_button_id").addEventListener("pointerdown", keyDownHandler);
+    document.getElementById("down_button_id").addEventListener("pointerup", keyUpHandler);
 
 //checking if buttons pressed if game not on a pause
 function keyDownHandler(e) {
     if(!pause){
-        if(e.key == "Right" || e.key == "ArrowRight" || e.target.id === "right_button_id") {
+        if(e.key === "Right" || e.key === "ArrowRight" || e.currentTarget.id === "right_button_id") {
             rightPressed = true;
-
         }
-        else if(e.key == "Left" || e.key == "ArrowLeft" || e.target.id === "left_button_id") {
+        if(e.key === "Left" || e.key === "ArrowLeft" || e.currentTarget.id === "left_button_id") {
             leftPressed = true;
-
         }
-        else if(e.key == "Down" || e.key == "ArrowDown" || e.target.id === "down_button_id") {
+        if(e.key === "Down" || e.key === "ArrowDown" || e.currentTarget.id === "down_button_id") {
             downPressed = true;
         }
-        else if(e.key == "Up" || e.key == "ArrowUp" || e.key == " " || e.target.id === "rotate_button_id") {
+        if(e.key === "Up" || e.key === "ArrowUp" || e.key === " " || e.currentTarget.id === "rotate_button_id") {
             upPressed = true;
         }
     }
     //if "P" pressed (pause)
-    if(e.keyCode === 80 || e.target.id === "pause_button_id") {
+    if(e.keyCode === 80 || e.currentTarget.id === "pause_button_id") {
         pause = !pause;
         gamePause();
         console.log("pause: " + pause)
     }
     //if "R" pressed (reset)
-    if(e.keyCode === 82 || e.target.id === "reset_button_id") {
+    if(e.keyCode === 82 || e.currentTarget.id === "reset_button_id") {
         gameReset();
     }
     //if "M" pressed (mute)
-    if(e.keyCode === 77 || e.target.id === "mute_button_id") {
+    if(e.keyCode === 77 || e.currentTarget.id === "mute_button_id") {
         muted = !muted;
         // gameMuted();
         console.log("mute")
@@ -124,13 +124,13 @@ function keyDownHandler(e) {
 }
 
 function keyUpHandler(e) {
-    if(e.key == "Right" || e.key == "ArrowRight" || e.target.id === "right_button_id") {
+    if(e.key == "Right" || e.key == "ArrowRight" || e.currentTarget.id === "right_button_id") {
         rightPressed = false;
     }
-    else if(e.key == "Left" || e.key == "ArrowLeft" || e.target.id === "left_button_id") {
+    if(e.key == "Left" || e.key == "ArrowLeft" || e.currentTarget.id === "left_button_id") {
         leftPressed = false;
     }
-    else if(e.key == "Down" || e.key == "ArrowDown" || e.target.id === "down_button_id") {
+    if(e.key == "Down" || e.key == "ArrowDown" || e.currentTarget.id === "down_button_id") {
         downPressed = false;
     }
     
