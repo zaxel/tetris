@@ -1550,4 +1550,4 @@ function Draw(){
 }
 
 
-Draw();
+requestAnimationFrame(Draw);
