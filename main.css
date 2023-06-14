@@ -197,6 +197,9 @@ canvas {
     top:1px;
     box-shadow: 1px 2px 0px 0px #899599;
 }
+.smallButton:focus-visible {
+	outline: none;
+}
 
 /* middle size buttons */
 .left_button,
@@ -224,6 +227,11 @@ canvas {
     position:relative;
     top:1px;
     box-shadow: 1px 2px 0px 0px #899599;
+}
+.left_button:focus-visible,
+.right_button:focus-visible,
+.down_button:focus-visible{
+    outline: none;
 }
 /* big size buttons */
 .rotate_button {
